@@ -43,7 +43,7 @@ public class EmployeeController {
         return "employees";
 	}
 
-    @RequestMapping(value="/employees",method=RequestMethod.POST)
+    @RequestMapping(value="/newemployee",method=RequestMethod.POST)
 	public String employeesAdd(@RequestParam String email, 
 						@RequestParam String firstName, @RequestParam String lastName, Model model) {
         Employee newEmployee = new Employee();
