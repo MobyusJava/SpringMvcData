@@ -11,8 +11,7 @@
       <div class="page-header" id="banner">
         <div class="row">
           <div class="col-lg-8 col-md-7 col-sm-6">
-            <h1>Employee</h1>
-            
+            <h1>Employee</h1>            
             <form class="form-horizontal" th:action="@{/employee/{id}/competences(id=${employee.id})}" method="post" enctype="multipart/form-data" >
             	<fieldset>
             		<div class="form-group">
@@ -55,8 +54,10 @@
             </form>
           </div>
         </div>
+         <div class="row">
+        	<a th:href="@{/employees}">Employee Overview</a>
+        </div> 
       </div>
 	</div>
-
 </body>
 </html>

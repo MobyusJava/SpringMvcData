@@ -20,6 +20,15 @@ public class EmployeeController {
 
 	@Autowired
 	CompetenceRepository compRepository;
+	
+	@RequestMapping(value="/index",method=RequestMethod.GET)
+	public String employeesIndex(Model model) {
+		 return "redirect:/employees";
+	}
+	@RequestMapping(value="/newemployee",method=RequestMethod.GET)
+	public String employeeNew(Model model) {
+		 return "newemployee";
+	}
 
 	@RequestMapping("/employee/{id}")
 	public String employee(@PathVariable Long id, Model model) {
