@@ -15,16 +15,34 @@ import be.mobyus.model.Employee;
 
 @Controller
 public class EmployeeController {
+	
+	/**
+	 * We indicate we require a employee repository at runtime
+	 * When EmployeeController is initiated, an EmployeeRepository is created and inserted into it.
+	 */
 	@Autowired
 	EmployeeRepository empRepository;
 
 	@Autowired
 	CompetenceRepository compRepository;
 	
-	@RequestMapping(value="/index",method=RequestMethod.GET)
+	/**
+	 * redirect blanc url to /employees
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping(value="/",method=RequestMethod.GET)
 	public String employeesIndex(Model model) {
 		 return "redirect:/employees";
 	}
+	
+	/**
+	 * Map url /newemployee to the view template newemployee.html in resources folder
+	 * .html is added as spring default config 
+	 * folder to look for the resource is managed by spring default config
+	 * @param model
+	 * @return
+	 */
 	@RequestMapping(value="/newemployee",method=RequestMethod.GET)
 	public String employeeNew(Model model) {
 		 return "newemployee";
